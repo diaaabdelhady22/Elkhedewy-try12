@@ -995,187 +995,6 @@ input:checked + .slider:before{
     font-size: 60px;
 }
 
-/* ===================================================
-   شاشة 800×1205 — ضبط متكامل
-   =================================================== */
-
-@media (min-width: 760px) and (max-width: 840px) {
-
-    /* ── الهيدر البيضاء ── */
-    .box {
-        height: 110px;
-    }
-
-    /* ── العنوان الثابت ── */
-    .box2 {
-        font-size: 54px;
-        top: 24px;
-        right: 100px;
-    }
-
-    /* ── زر القائمة ── */
-    .box4 {
-        top: 20px;
-        right: 16px;
-    }
-
-    /* ── محتوى الصفحة: مسافة من الهيدر ── */
-    body > *:not(.box):not(.particles):not(.ss):not(#closeSS) {
-        margin-top: 130px;
-    }
-
-    /* ── الأزرار الرئيسية ── */
-    #b1 {
-        height: 140px;
-        font-size: 68px;
-        border-radius: 42px;
-    }
-
-    #b1:hover {
-        height: 155px;
-        border-radius: 22px;
-    }
-
-    #bb {
-        height: 140px;
-        font-size: 68px;
-        border-radius: 42px;
-    }
-
-    #bb:hover {
-        height: 140px;
-        border-radius: 22px;
-        width: 100%;
-    }
-
-    /* ── حقول الإدخال ── */
-    #text {
-        height: 140px;
-        font-size: 100px;
-        border-radius: 42px;
-    }
-
-    .name {
-        height: 140px;
-        font-size: 100px;
-        border-radius: 42px;
-    }
-
-    /* ── الكروت ── */
-    .dynamicButtons {
-        gap: 20px;
-        margin-top: 30px;
-        padding: 14px;
-    }
-
-    .card {
-        border-radius: 32px;
-    }
-
-    .card h2 {
-        font-size: 54px;
-    }
-
-    .card button {
-        height: 78px;
-        font-size: 40px;
-        border-radius: 22px;
-        margin-bottom: 24px;
-    }
-
-    /* ── السايدبار ── */
-    .ss {
-        width: 370px !important;
-        max-width: 370px;
-        padding: 16px;
-    }
-
-    .ssTitle {
-        font-size: 64px;
-        margin-top: 90px;
-        gap: 14px;
-    }
-
-    .menuBtn {
-        height: 92px;
-        font-size: 46px;
-        border-radius: 26px;
-        margin-top: 18px;
-    }
-
-    .menuBtn .material-icons {
-        font-size: 46px;
-    }
-
-    /* ── زر إغلاق السايدبار ── */
-    #closeSS {
-        width: 52px;
-        top: 40px;
-        left: calc(370px + 12px);
-    }
-
-    /* ── صفحة الإعدادات ── */
-    .setting {
-        height: 92px;
-        font-size: 40px;
-        border-radius: 26px;
-        padding-right: 20px;
-        padding-left: 20px;
-        margin-top: 18px;
-    }
-
-    .setting .material-icons {
-        font-size: 44px;
-    }
-
-    /* ── السويتش ── */
-    .switch {
-        width: 86px;
-        height: 43px;
-    }
-
-    .slider:before {
-        height: 33px;
-        width: 33px;
-    }
-
-    input:checked + .slider:before {
-        transform: translateX(43px);
-    }
-
-    /* ── زر الرجوع ── */
-    #backBtn {
-        height: 92px;
-        font-size: 46px;
-        border-radius: 26px;
-        margin-top: 30px;
-    }
-
-    #backBtn .material-icons {
-        font-size: 46px;
-    }
-
-    /* ── زر تسجيل الخروج ── */
-    #logoutBtn {
-        height: 92px;
-        font-size: 46px;
-        border-radius: 26px;
-        margin-top: 30px;
-        margin-left: 18px;
-        width: 88%;
-        gap: 10px;
-    }
-
-    #logoutBtn .material-icons {
-        font-size: 46px;
-    }
-
-    /* ── الجزيئات ── */
-    .particles span {
-        width: 11px;
-        height: 11px;
-    }
-}
 #videoPlayer{
     position: fixed;
     inset: 0;
@@ -1219,4 +1038,67 @@ input:checked + .slider:before{
     font-size: 18px;
     border-radius: 8px;
     cursor: pointer;
+}
+#videoPlayer{
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vp-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+}
+
+.vp-box{
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+    z-index: 2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+.vp-box iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* زرار القفل */
+.vp-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: red;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.vp-box{
+    position: relative;
+    overflow: hidden;
+}
+
+/* طبقة بتغطي الشريط العلوي بتاع يوتيوب */
+.vp-box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* عدلها حسب شكل الفيديو */
+    background: black;
+    z-index: 10;
+    pointer-events: none;
     }
